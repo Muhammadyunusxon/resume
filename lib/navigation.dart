@@ -49,11 +49,7 @@ class Navigation extends StatelessWidget {
         },
         elevation: 2,
         backgroundColor: SUB_COLOR,
-        child: Icon(
-          iconData,
-          color: Colors.white,
-          size: 16,
-        ),
+        child: Icon(iconData, color: Colors.white, size: 16),
       ),
     );
   }
@@ -74,9 +70,8 @@ class Navigation extends StatelessWidget {
                 width: 64,
                 height: 64,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage(Data.AVATAR),
-                  backgroundColor: Colors.white,
-                ),
+                    backgroundImage: AssetImage(Data.AVATAR),
+                    backgroundColor: Colors.white),
               ),
               SizedBox(height: 24),
               Row(
@@ -84,20 +79,17 @@ class Navigation extends StatelessWidget {
                   Text(
                     "${Data.NAME}",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                    ),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
                   SizedBox(width: 4),
                   Container(
                     width: 8,
                     height: 8,
                     margin: EdgeInsets.only(top: 8),
-                    decoration: BoxDecoration(
-                      color: SUB_COLOR,
-                      shape: BoxShape.circle,
-                    ),
+                    decoration:
+                        BoxDecoration(color: SUB_COLOR, shape: BoxShape.circle),
                   )
                 ],
               ),
@@ -105,10 +97,9 @@ class Navigation extends StatelessWidget {
               Text(
                 "Mobile developer",
                 style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w200,
-                  fontSize: 14,
-                ),
+                    color: Colors.white,
+                    fontWeight: FontWeight.w200,
+                    fontSize: 14),
               ),
               SizedBox(height: 48),
               _buildNavigationOption("Home", Icons.home, onTap: () {
@@ -143,9 +134,7 @@ class Navigation extends StatelessWidget {
                     Data.GITHUB_URL,
                   ),
                   _buildLinkingButton(
-                    FontAwesomeIcons.linkedinIn,
-                    Data.LINKEDIN_URL,
-                  ),
+                      FontAwesomeIcons.linkedinIn, Data.LINKEDIN_URL),
                 ],
               ),
               SizedBox(height: 32),
@@ -154,11 +143,10 @@ class Navigation extends StatelessWidget {
                 child: Text(
                   Data.EMAIL,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(.5),
-                    fontWeight: FontWeight.w100,
-                    fontStyle: FontStyle.italic,
-                    fontSize: 12,
-                  ),
+                      color: Colors.white.withOpacity(.5),
+                      fontWeight: FontWeight.w100,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 12),
                 ),
               ),
             ],

@@ -4,10 +4,7 @@ import 'package:cv/get_in_touch_page.dart';
 import 'package:cv/home_page.dart';
 import 'package:cv/navigation.dart';
 import 'package:cv/tab_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 

@@ -14,10 +14,7 @@ class AppTabBar extends StatelessWidget {
         child: Row(
           children: <Widget>[
             IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.white,
-              ),
+              icon: Icon(Icons.menu, color: Colors.white),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -27,9 +24,8 @@ class AppTabBar extends StatelessWidget {
               width: 32,
               height: 32,
               child: CircleAvatar(
-                backgroundImage: AssetImage(Data.AVATAR),
-                backgroundColor: Colors.white,
-              ),
+                  backgroundImage: AssetImage(Data.AVATAR),
+                  backgroundColor: Colors.white),
             ),
             SizedBox(width: 16),
             RichText(
@@ -38,18 +34,16 @@ class AppTabBar extends StatelessWidget {
                   TextSpan(
                     text: "${Data.NAME}",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
                   TextSpan(
                     text: ' ●',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: SUB_COLOR,
-                    ),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                        color: SUB_COLOR),
                   ),
                 ],
               ),

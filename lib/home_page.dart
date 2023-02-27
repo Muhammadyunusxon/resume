@@ -1,5 +1,4 @@
 import 'package:cv/data.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -30,12 +29,14 @@ class HomePage extends StatelessWidget {
                 Flexible(
                   child: Row(
                     children: [
-                      Text(
-                        "I'm ${Data.NAME}",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 54,
+                      Expanded(
+                        child: Text(
+                          "I'm ${Data.NAME}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 32,
+                          ),
                         ),
                       ),
                       SizedBox(width: 4),
@@ -61,21 +62,7 @@ class HomePage extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
-                SizedBox(height: 8),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "- ${Data.HOME_AUTHOR} -",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w100,
-                      fontStyle: FontStyle.italic,
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 32),
+                SizedBox(height: 42),
                 Wrap(
                   runSpacing: 12,
                   spacing: 12,

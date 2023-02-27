@@ -55,20 +55,15 @@ class _CompanyPageState extends State<CompanyPage> {
                         top: 8,
                         left: 8,
                         child: Container(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 2,
-                            horizontal: 12,
-                          ),
+                          padding:
+                              EdgeInsets.symmetric(vertical: 2, horizontal: 12),
                           decoration: BoxDecoration(
                             color: Colors.redAccent,
                             borderRadius: BorderRadius.circular(32),
                           ),
                           child: Text(
                             company.time,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
+                            style: TextStyle(color: Colors.white, fontSize: 12),
                           ),
                         ),
                       ),
@@ -77,11 +72,8 @@ class _CompanyPageState extends State<CompanyPage> {
                         child: Container(
                           alignment: Alignment.center,
                           color: Colors.grey.withAlpha(24),
-                          child: Image.asset(
-                            company.imagePath,
-                            fit: BoxFit.fitHeight,
-                            height: 64,
-                          ),
+                          child: Image.asset(company.imagePath,
+                              fit: BoxFit.fitHeight, height: 64),
                         ),
                       ),
                     ],

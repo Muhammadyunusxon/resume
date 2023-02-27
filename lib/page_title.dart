@@ -13,10 +13,7 @@ class PageTitle extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
         SizedBox(height: 12),
         Container(

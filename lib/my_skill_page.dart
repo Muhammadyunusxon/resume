@@ -71,10 +71,7 @@ class _MySkillPageState extends State<MySkillPage> {
             SizedBox(height: 32),
             Text(
               SKILLS,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey,
-              ),
+              style: TextStyle(fontSize: 14, color: Colors.grey),
             ),
             SizedBox(height: 24),
             LayoutBuilder(

@@ -1,27 +1,24 @@
 class Data {
-  static const WEB_TITLE = "Nam - Mobile Developer";
-  static const NAME = "Nam Do";
-  static const PHONE_NUMBER = "+84766261102";
-  static const EMAIL = "thanhnamitit@gmail.com";
-  static const LOCATION = "Hanoi, Vietnam";
-  static const BIRTHDAY = "24 February, 1995";
+  static const WEB_TITLE = "Muhammadyunusxon.uz";
+  static const NAME = "Muhammadyunusxon";
+  static const PHONE_NUMBER = "+998933270279";
+  static const EMAIL = "Muhammadyunusxon@yandex.com";
+  static const LOCATION = "Yangiyer,Uzbekistan 121000";
 
   static const AVATAR = "image/avatar.png";
 
-  static const FACEBOOK_URL = "https://www.facebook.com/thanhnamitit";
-  static const INSTAGRAM_URL = "https://www.instagram.com/thanhnamitit/";
-  static const GITHUB_URL = "https://github.com/thanhnamitit";
-  static const LINKEDIN_URL = "https://www.linkedin.com/in/đỗ-nam-b51829167/";
+  static const FACEBOOK_URL = "https://www.facebook.com/Muhammadyunusxon.uz";
+  static const INSTAGRAM_URL = "https://www.instagram.com/Muhammadyunusxonuz/";
+  static const GITHUB_URL = "https://github.com/Muhammadyunusxon";
+  static const LINKEDIN_URL = "https://www.linkedin.com/in/Muhammadyunusxon/";
 
   static const HOME_SENTENCE =
-      "The proper use of comments is to compensate for our failure to express ourself in code.";
-  static const HOME_AUTHOR = "Robert C. Martin";
+      "I'm a Flutter developer. I love development because I enjoy overcoming challenges and learning new things.";
 
   static const ABOUT_PAGE_INFO = {
-    "Name": NAME,
     "Location": LOCATION,
-    "Birthday": BIRTHDAY,
     "Email": EMAIL,
+    "Phone number": PHONE_NUMBER,
   };
 
   static const MESSAGE_API =

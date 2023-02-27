@@ -6,17 +6,12 @@ import 'base_page.dart';
 import 'data.dart';
 
 const INTRODUCE =
-    "I am Nam, Mobile Developer from Ha Noi, Viet Nam. I have rich experience in Android development, also I am good at Flutter.";
+    "I am Muhammadyunusxon, I tried myself in several areas. And I chose the field of Mobile programming. I am currently a Flutter mobile developer";
 
 const SKILLS = """
-Android (Both Java and Kotlin):
-- Have 4 years+ experience in Android development.
-- Familiar with MVC, MVP, MVVM, MVRX (AirBnb), Clean architecture,...
-- Familiar with Android Jetpack, RxJava, FCM, Firebase, Google map, Socket, MQTT, Dagger, Koin...
-
 Flutter:
-- Have 3 year+ experience in Flutter.
-- Familiar with Bloc, ScopeModel, Provider,...
+- Familiar with MVC, Clean architecture,...
+- Familiar with Provider, RestApi, OOP, Firebase, Google map ...
 
 Confident in Algorithm, OOP concepts, Design Pattern, SOLID principles,...
 Proficient in using git.
@@ -125,12 +120,13 @@ class AboutPage extends StatelessWidget {
                               direction: Axis.horizontal,
                               children: Data.ABOUT_PAGE_INFO.entries
                                   .toList()
-                                  .map((pair) => SizedBox(
-                                      width: isTabletSize
-                                          ? constrains.maxWidth / 2
-                                          : constrains.maxWidth,
+                                  .map(
+                                    (pair) => SizedBox(
+                                      width: constrains.maxWidth,
                                       child:
-                                          _buildInfoLine(pair.key, pair.value)))
+                                          _buildInfoLine(pair.key, pair.value),
+                                    ),
+                                  )
                                   .toList(),
                             ),
                           ),
@@ -142,9 +138,7 @@ class AboutPage extends StatelessWidget {
                             children: <Widget>[
                               MaterialButton(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 42,
-                                  vertical: 20,
-                                ),
+                                    horizontal: 42, vertical: 20),
                                 onPressed: downloadCV,
                                 color: SUB_COLOR,
                                 shape: RoundedRectangleBorder(
@@ -153,27 +147,20 @@ class AboutPage extends StatelessWidget {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
-                                    Icon(
-                                      Icons.file_download,
-                                      color: Colors.white,
-                                      size: 16,
-                                    ),
+                                    Icon(Icons.file_download,
+                                        color: Colors.white, size: 16),
                                     SizedBox(width: 6),
                                     Text(
                                       "Download my CV",
                                       style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                      ),
+                                          color: Colors.white, fontSize: 12),
                                     )
                                   ],
                                 ),
                               ),
                               MaterialButton(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: 42,
-                                  vertical: 20,
-                                ),
+                                    horizontal: 42, vertical: 20),
                                 onPressed: hireMe,
                                 color: MAIN_COLOR,
                                 shape: RoundedRectangleBorder(

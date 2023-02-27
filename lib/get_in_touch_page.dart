@@ -128,7 +128,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text("This feature was removed :D"),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.green,
       ),
     );
   }
@@ -167,8 +167,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
-                width: 256,
+              Expanded(
                 child: buildContactItem(Icons.email, "Email", Data.EMAIL),
               ),
               Expanded(
@@ -260,9 +259,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
               Text(
                 'Note: Submit function is not work anymore, but I keep it here because it\'s beautiful ^^',
                 style: Theme.of(context).textTheme.caption?.copyWith(
-                      fontStyle: FontStyle.italic,
-                      color: Colors.deepOrange,
-                    ),
+                    fontStyle: FontStyle.italic, color: Colors.deepOrange),
               )
             ],
           ),
