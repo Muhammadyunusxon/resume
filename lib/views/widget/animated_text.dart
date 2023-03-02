@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../app.dart';
+import '../app_const.dart';
+
 
 class AnimatedText extends StatefulWidget {
   final VoidCallback? onTap;

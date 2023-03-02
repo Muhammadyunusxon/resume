@@ -1,4 +1,4 @@
-import 'package:cv/app.dart';
+import 'package:cv/views/app_widget.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(App());
+void main() => runApp(AppWidget());

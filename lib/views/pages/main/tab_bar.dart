@@ -1,8 +1,8 @@
-import 'package:cv/data.dart';
+import 'package:cv/domen/data/data.dart';
 import 'package:flutter/material.dart';
 
-import 'app.dart';
-import 'base_page.dart';
+import '../../app_const.dart';
+import '../../widget/base_page.dart';
 
 class AppTabBar extends StatelessWidget {
   @override
@@ -52,6 +52,5 @@ class AppTabBar extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

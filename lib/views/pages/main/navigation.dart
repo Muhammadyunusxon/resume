@@ -1,10 +1,10 @@
-import 'package:cv/data.dart';
-import 'package:cv/widget/menu_button.dart';
+import 'package:cv/domen/data/data.dart';
+import 'package:cv/views/widget/menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'app.dart';
+import '../../app_const.dart';
 
 class Navigation extends StatelessWidget {
   final Function onTap;
@@ -108,14 +108,11 @@ class Navigation extends StatelessWidget {
               _buildNavigationOption("About", Icons.account_box, onTap: () {
                 this.onTap(1);
               }),
-              _buildNavigationOption("Resume", Icons.book, onTap: () {
+              _buildNavigationOption("Projects", Icons.work, onTap: () {
                 this.onTap(2);
               }),
-              _buildNavigationOption("Work", Icons.work, onTap: () {
-                this.onTap(3);
-              }),
               _buildNavigationOption("Contact", Icons.contacts, onTap: () {
-                this.onTap(4);
+                this.onTap(3);
               }),
               SizedBox(height: 48),
               Row(

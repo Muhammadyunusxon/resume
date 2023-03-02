@@ -1,5 +1,6 @@
-import 'package:cv/app.dart';
 import 'package:flutter/material.dart';
+
+import '../app_const.dart';
 
 class PageTitle extends StatelessWidget {
   final String title;

@@ -1,47 +1,15 @@
-import 'package:cv/base_page.dart';
-import 'package:cv/data.dart';
-import 'package:cv/get_in_touch_page.dart';
-import 'package:cv/home_page.dart';
-import 'package:cv/navigation.dart';
-import 'package:cv/tab_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'about_page.dart';
-import 'companies_page.dart';
-import 'my_skill_page.dart';
-
-const VERTICAL_PADDING_SIZE = 32.0;
-const PAGE_PADDING_SIZE = 18.0;
-
-const MAIN_COLOR = Color(0xff5A72EA);
-const SUB_COLOR = Color(0xffFF5A59);
-
-const MIN_TABLET_SIZE = 1080;
-
-const VERTICAL_PAGE_PADDING = 54.0;
-const HORIZONTAL_PAGE_PADDING = 48.0;
-
-const PAGE_CONTENT_PADDING = const EdgeInsets.symmetric(
-  vertical: VERTICAL_PAGE_PADDING,
-  horizontal: HORIZONTAL_PAGE_PADDING,
-);
-
-class App extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: Data.WEB_TITLE,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: GoogleFonts.openSans().fontFamily,
-        accentColor: SUB_COLOR,
-      ),
-      home: MainPage(),
-    );
-  }
-}
+import '../../../domen/data/data.dart';
+import '../../app_const.dart';
+import '../contact/get_in_touch_page.dart';
+import '../about/my_skill_page.dart';
+import 'navigation.dart';
+import '../projects/projects.dart';
+import 'tab_bar.dart';
+import '../about/about_page.dart';
+import '../home/home_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -60,9 +28,9 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget pagePadding([Key? key]) => SizedBox(
-        key: key,
-        height: PAGE_PADDING_SIZE,
-      );
+    key: key,
+    height: PAGE_PADDING_SIZE,
+  );
 
   Widget _homePage() {
     return IntrinsicHeight(
@@ -102,20 +70,13 @@ class _MainPageState extends State<MainPage> {
           Visibility(visible: !forTablet, child: AppTabBar()),
           _homePage(),
           pagePadding(),
-          BasePage(
-            child: InkWell(
-              onTap: () => launch(Data.CERTIFICATE_URL),
-              child: Image.asset('image/cer.png'),
-            ),
-          ),
-          pagePadding(),
           AboutPage(keys[1], _downloadCV, _hireMe),
           pagePadding(),
-          MySkillPage(keys[2]),
+          MySkillPage(keys[4]),
           pagePadding(),
-          CompanyPage(keys[3]),
+          ProjectsPage(keys[2]),
           pagePadding(),
-          GetInTouchPage(keys[4]),
+          GetInTouchPage(keys[3]),
         ],
       ),
     );

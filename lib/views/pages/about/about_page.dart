@@ -1,9 +1,10 @@
-import 'package:cv/page_title.dart';
+import 'package:cv/views/widget/page_title.dart';
+import 'package:cv/views/pages/about/widgets.dart';
 import 'package:flutter/material.dart';
 
-import 'app.dart';
-import 'base_page.dart';
-import 'data.dart';
+import '../../app_const.dart';
+import '../../widget/base_page.dart';
+import '../../../domen/data/data.dart';
 
 const INTRODUCE =
     "I am Muhammadyunusxon, I tried myself in several areas. And I chose the field of Mobile programming. I am currently a Flutter mobile developer";
@@ -25,46 +26,8 @@ class AboutPage extends StatelessWidget {
 
   AboutPage(GlobalKey key, this.downloadCV, this.hireMe) : super(key: key);
 
-  Widget _multiChildLayout({
-    required bool forTablet,
-    required List<Widget> children,
-  }) {
-    Widget result;
-    if (!forTablet) {
-      result = Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: children,
-      );
-    } else {
-      result = Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: children,
-      );
-    }
-    return result;
-  }
-
   bool _isTabletSize(double maxWidth) {
     return maxWidth > 4 * AVATAR_SIZE;
-  }
-
-  Widget _buildInfoLine(String field, String value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
-      child: RichText(
-        text: TextSpan(children: [
-          TextSpan(
-            text: "$field: ",
-            style: TextStyle(color: Colors.grey, fontSize: 14),
-          ),
-          TextSpan(
-            text: value,
-            style: TextStyle(color: Colors.black87, fontSize: 14),
-          ),
-        ]),
-      ),
-    );
   }
 
   @override
@@ -82,7 +45,7 @@ class AboutPage extends StatelessWidget {
               children: <Widget>[
                 PageTitle("About Me"),
                 SizedBox(height: 32),
-                _multiChildLayout(
+                multiChildLayout(
                   forTablet: isTabletSize,
                   children: <Widget>[
                     SizedBox(width: 16),
@@ -124,7 +87,7 @@ class AboutPage extends StatelessWidget {
                                     (pair) => SizedBox(
                                       width: constrains.maxWidth,
                                       child:
-                                          _buildInfoLine(pair.key, pair.value),
+                                          buildInfoLine(pair.key, pair.value),
                                     ),
                                   )
                                   .toList(),

@@ -1,10 +1,10 @@
-import 'package:cv/app.dart';
-import 'package:cv/page_title.dart';
-import 'package:cv/widget/animated_text.dart';
-import 'package:cv/widget/react_button.dart';
+import 'package:cv/views/widget/page_title.dart';
+import 'package:cv/views/widget/animated_text.dart';
+import 'package:cv/views/widget/react_button.dart';
 import 'package:flutter/material.dart';
 
-import 'base_page.dart';
+import 'app_const.dart';
+import 'widget/base_page.dart';
 
 final companies = [
   Company(
