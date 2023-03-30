@@ -1,9 +1,11 @@
-import 'package:cv/app.dart';
-import 'package:cv/base_page.dart';
-import 'package:cv/data.dart';
-import 'package:cv/page_title.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cv/views/widget/base_page.dart';
+import 'package:cv/domen/data/data.dart';
+import 'package:cv/views/widget/page_title.dart';
 import 'package:flutter/material.dart';
+
+import '../../../domen/model/send_mail_model.dart';
+import '../../../domen/repository/repository.dart';
+import '../../app_const.dart';
 
 class GetInTouchPage extends StatefulWidget {
   GetInTouchPage(GlobalKey key) : super(key: key);
@@ -84,26 +86,29 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
           size: 28,
         ),
         SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
-            ),
-            SizedBox(height: 4),
-            Text(
-              content,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: Colors.black54,
+              SizedBox(height: 4),
+              Text(
+                content,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                  color: Colors.black54,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         )
       ],
     );
@@ -125,12 +130,34 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
   }
 
   void submit() async {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text("This feature was removed :D"),
+    toggleIsSubmitting(false);
+    if(_formKey.currentState?.validate() ?? false){
+    SendSimpleModel model = SendSimpleModel(
+        email: emailController.text,
+        subject: subjectController.text,
+        desc: messageController.text, name: nameController.text);
+    var status = await MainRepository.sendGmail(model: model);
+    print(status);
+
+    if (status == 403) {
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text("You are not subscribed to this API."),
+        backgroundColor: Colors.red,
+      ));
+    } else if (status == 202) {
+      nameController.clear();
+      emailController.clear();
+      subjectController.clear();
+      messageController.clear();
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text("Yuborildi"),
         backgroundColor: Colors.green,
-      ),
-    );
+      ));
+    }}
+
+    toggleIsSubmitting(true);
   }
 
   Widget buildTabletLayout() {
@@ -143,7 +170,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                width: 256,
+                width: 260,
                 child: buildContactItem(Icons.call, "Phone", Data.PHONE_NUMBER),
               ),
               Expanded(
@@ -167,7 +194,8 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Expanded(
+              SizedBox(
+                width: 260,
                 child: buildContactItem(Icons.email, "Email", Data.EMAIL),
               ),
               Expanded(
@@ -181,7 +209,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              width: 256,
+              width: 260,
               child: buildContactItem(
                   Icons.my_location, "Location", Data.LOCATION),
             ),
@@ -258,7 +286,7 @@ class _GetInTouchPageState extends State<GetInTouchPage> {
               SizedBox(height: 32),
               Text(
                 'Note: Submit function is not work anymore, but I keep it here because it\'s beautiful ^^',
-                style: Theme.of(context).textTheme.caption?.copyWith(
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     fontStyle: FontStyle.italic, color: Colors.deepOrange),
               )
             ],
